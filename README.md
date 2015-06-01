@@ -26,7 +26,6 @@ And this is using `antitypical/Result`.
  func requestRepository(repoId: Int64, completion: (Repository?, NSError?) -> Void) {}
  func requestUser(userId: Int64, completion: (User?, NSError?) -> Void) {}
  
- 
  // get owner info of a given repository
  requestRepository(12345) { repo, error in
  	if let repo = repo {
