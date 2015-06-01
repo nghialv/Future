@@ -73,6 +73,32 @@ extension FutureFunctionalTests {
         }
     }
     
+    func testMapFlatMapOperators() {
+        let f = requestString("12345") <^> { count($0) } >>- requestStringFromNumber
+        
+        checkFutureShouldNotBeCompleted(f)
+        
+        f.onComplete { result in
+            switch result {
+            case .Success(let bv): XCTAssertEqual(bv.value, "5", "Future should return 5 as a String")
+            case .Failure(let be): XCTAssertFalse(true, "Future should not be failed")
+            }
+        }
+    }
+    
+    func testFlatMapMapOperators() {
+        let f = requestString("12345") >>- requestStringLenght <^> { "\($0)" }
+        
+        checkFutureShouldNotBeCompleted(f)
+        
+        f.onComplete { result in
+            switch result {
+            case .Success(let bv): XCTAssertEqual(bv.value, "5", "Future should return 5 as a String")
+            case .Failure(let be): XCTAssertFalse(true, "Future should not be failed")
+            }
+        }
+    }
+    
     func testFilter() {
         let noSuchElementError = NSError(domain: "noSuchElement", code: 1, userInfo: nil)
         

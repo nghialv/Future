@@ -222,17 +222,19 @@ infix operator <^> {
     // Left associativity
     associativity left
 
-    // Using the same `precedence` value with Swiftz's operator
-    precedence 140
+    // precedence
+    precedence 150
 }
 
+/*
 infix operator >>- {
     // Left associativity
     associativity left
 
-    // Using the same `precedence` value with Swiftz's operator
-    precedence 140
+    // Using the same `precedence` value in antitypical/Result
+    precedence 100
 }
+*/
 
 // Operator for `map`
 public func <^> <T, U, Error> (future: Future<T, Error>, transform: T -> U) -> Future<U, Error> {
