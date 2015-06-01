@@ -93,7 +93,8 @@ Installation
 
 
 - Using Cocoapods
->	- Insert `pod "Future"` to you Podfile
+>	- Insert `use_frameworks!` to your Podfile
+>	- Insert `pod "Future"` to your Podfile
 >	- Run `pod install`
 
 - Using Submodule
