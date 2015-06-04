@@ -140,6 +140,19 @@ f3.onComplete { result in
 
 - `recover`
 - `zip`
+
+```swift
+let f1 = searchRepositories("Future")
+let f2 = requestUser("nghialv")
+        
+let f3 = f1.zip(f2)
+
+f3.onSuccess { repos, user in
+	println(repos)
+	println(user)
+}
+```
+
 - `flatten`
 
 
