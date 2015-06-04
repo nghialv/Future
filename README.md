@@ -76,7 +76,29 @@ Usage
 -----
 
 - `map` `<^>`
+
+```swift
+let f = requestUser("nghialv") <^> { $0.id }
+
+f.onSuccess { userId in
+	println(userId)
+}
+
+```
+
 - `flatMap` `>>-`
+
+```swift
+let f = searchRepositories("Hakuba") <^> { $0.first!.ownerName } >>- requestUser
+
+f.onComplete { result in
+	switch result {
+		case .Success(let user):   println(user)
+		case .Failure(let error):  println(error)
+	}
+}
+```
+
 - `filter`
 
 ``` swift
@@ -94,6 +116,28 @@ f.onComplete { result in
 ```
 
 - `andThen`
+
+```swift
+// side-effect
+var reposCount = 0
+        
+let f1 = searchRepositories("Hakuba")
+let f2 = f1.andThen { result in
+    switch result {
+        case .Success(let repos): reposCount = repos.value.count
+        case .Failure(let error): break
+    }
+}
+let f3 = f2 <^> { $0.first!.ownerName } >>- requestUser
+        
+f3.onComplete { result in
+    switch result {
+        case .Success(let user):   println(user)
+        case .Failure(let error):  println(error)
+    }
+}
+```
+
 - `recover`
 - `zip`
 - `flatten`
