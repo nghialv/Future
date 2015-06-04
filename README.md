@@ -78,6 +78,19 @@ Usage
 - `map` `<^>`
 - `flatMap` `>>-`
 - `filter`
+
+``` swift
+let e = NSError(domain: "noSuchElement", code: 1, userInfo: nil)
+        
+let f = searchRepositories("Hakuba").filter(e){ $0.count > 0 } <^> { $0.first!.ownerName } >>- requestUser
+f.onComplete { result in
+	switch result {
+		case .Success(let user):   println(user)
+		case .Failure(let error):  println(error)
+	}
+}
+```
+
 - `andThen`
 - `recover`
 - `zip`

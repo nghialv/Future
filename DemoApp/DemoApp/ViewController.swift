@@ -14,9 +14,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let f = searchRepositories("Hakuba") <^> { $0[0].ownerName } >>- requestUser
-        f.onSuccess { result in
-            println(result)
+        let e = NSError(domain: "noSuchElement", code: 1, userInfo: nil)
+        
+        let f = searchRepositories("Hakuba").filter(e){ $0.count > 0 } <^> { $0.first!.ownerName } >>- requestUser
+        f.onComplete { result in
+            switch result {
+            case .Success(let user):   println(user)
+            case .Failure(let error):  println(error)
+            }
         }
     }
 }
