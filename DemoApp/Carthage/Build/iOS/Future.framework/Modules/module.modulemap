@@ -1,0 +1,10 @@
+framework module Future {
+  umbrella header "Future.h"
+
+  export *
+  module * { export * }
+}
+
+module Future.Swift {
+    header "Future-Swift.h"
+}

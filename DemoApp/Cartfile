@@ -1,0 +1,3 @@
+github "nghialv/Future"
+github "Alamofire/Alamofire" == 1.2.2
+github "ikesyo/Himotoki" == 0.3

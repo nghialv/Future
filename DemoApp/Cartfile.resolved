@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "1.2.2"
+github "robrix/Box" "1.2.2"
+github "ikesyo/Himotoki" "0.3"
+github "antitypical/Result" "0.4.3"
+github "nghialv/Future" "0.0.4"
