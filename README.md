@@ -81,8 +81,10 @@ Usage
 
 ``` swift
 let e = NSError(domain: "noSuchElement", code: 1, userInfo: nil)
-        
-let f = searchRepositories("Hakuba").filter(e){ $0.count > 0 } <^> { $0.first!.ownerName } >>- requestUser
+let f1 = searchRepositories("Hakuba")
+
+let f = f1.filter(e){ $0.count > 0 } <^> { $0.first!.ownerName } >>- requestUser
+
 f.onComplete { result in
 	switch result {
 		case .Success(let user):   println(user)
