@@ -139,6 +139,7 @@ f3.onComplete { result in
 ```
 
 - `recover`
+
 - `zip`
 
 ```swift
