@@ -227,6 +227,7 @@ infix operator <^> {
 }
 
 /*
+// Avoid conflict with the operator of Result
 infix operator >>- {
     // Left associativity
     associativity left
