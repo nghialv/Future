@@ -71,6 +71,4 @@ func checkFutureShouldNotBeCompleted<T, Error>(f: Future<T, Error>) {
     XCTAssertFalse(f.isCompleted, "Future should not be Completed")
     XCTAssertFalse(f.isSuccess, "Future should not be Success")
     XCTAssertFalse(f.isFailure, "Future should not be Failure")
-    //XCTAssertNil(f.value, "Future should return nil value")
-    //XCTAssertNil(f.error, "Future should return nil error")
 }
