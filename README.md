@@ -21,7 +21,7 @@ And this is using `antitypical/Result`.
 
 > Do you want to checkout [`Try`](https://github.com/nghialv/Try) µframework?
 >
-> [`Try`](https://github.com/nghialv/Try) is a µframework that provides Try<T, Error> for dealing with try-catch in Swift 2.0.
+> [`Try`](https://github.com/nghialv/Try) is a µframework that provides Try&lt;T, Error> for dealing with try-catch in Swift 2.0.
 
 ### Why we need Future?
 
