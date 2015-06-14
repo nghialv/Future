@@ -19,10 +19,6 @@ This library is inspired by the [talk of Javier Soto](https://realm.io/news/swif
 And this is using `antitypical/Result`.
 
 
-> Do you want to checkout [`Try`](https://github.com/nghialv/Try) µframework?
->
-> [`Try`](https://github.com/nghialv/Try) is a µframework that provides Try&lt;T, Error> for dealing with try-catch in Swift 2.0.
-
 ### Why we need Future?
 
 ##### Traditional async code
