@@ -166,7 +166,7 @@ Installation
 >	- Run `carthage update`
 
 
-- Using Cocoapods
+- Using CocoaPods
 >	- Insert `use_frameworks!` to your Podfile
 >	- Insert `pod "Future"` to your Podfile
 >	- Run `pod install`
